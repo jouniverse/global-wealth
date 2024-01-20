@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url("../../img/gold-bg/gold-21-repeat.jpg");
+  background-image: url("./img/gold-bg/gold-21-repeat.jpg");
   background-size: 100%;
   background-repeat: repeat;
   place-items: center;
@@ -250,7 +250,7 @@ canvas {
 @media screen and (max-width: 768px) {
   body {
     /* background-size: 100%; */
-    background-image: url("../../img/gold-bg/gold-bg-8-repeat.jpg");
+    background-image: url("./img/gold-bg/gold-bg-8-repeat.jpg");
     background-size: 100;
   }
 
