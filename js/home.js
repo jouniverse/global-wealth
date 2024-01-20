@@ -9,7 +9,7 @@ overlay.classList.add("overlay");
 
 let date = new Date();
 let year = date.getFullYear();
-overlay.innerHTML += `<img class="logo-img" src="../img/ubs-logo-inv.png"></img><ul class="navbar">
+overlay.innerHTML += `<img class="logo-img" src="../../img/ubs-logo-inv.png"></img><ul class="navbar">
 <li class="item active"><a href="#">Home</a></li>
 <li class="item"><a href="wealth-distribution.html">Wealth Distribution</a></li>
 <li class="item"><a href="private-wealth.html">Private Wealth</a></li>
