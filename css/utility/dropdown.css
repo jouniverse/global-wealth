@@ -1,0 +1,117 @@
+.dropdown {
+  z-index: 3;
+  margin: 4rem 2rem 2rem 2rem;
+  width: 40%;
+  max-width: 100%;
+  position: relative;
+}
+
+.dropdown * {
+  box-sizing: border-box;
+}
+
+.select {
+  background-color: transparent;
+  color: var(--seasalt);
+  text-shadow: 5px 5px 10px var(--tenne), -5px -5px 10px var(--ochre);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px var(--seasalt) solid;
+  border-radius: 3rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  box-shadow: 5px 5px 15px var(--tenne), -5px -5px 20px var(--pirate-gold);
+  transition: background 0.3s;
+}
+
+.select-clicked {
+  border: 2px var(--eerie-black) solid;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid var(--brand-red);
+  border-top: 10px solid var(--seasalt);
+  border-radius: 10px;
+  transform: rotate(90deg);
+  transition: 0.35;
+}
+
+.caret-rotate {
+  transform: rotate(180deg);
+}
+
+.menu {
+  position: absolute;
+  margin-top: 2.5rem;
+  list-style: none;
+  padding: 0.2em 0.5em;
+  background-color: var(--ochre);
+  border-left: 3px solid var(--eerie-black);
+  max-height: 230px;
+  overflow-y: scroll;
+  box-shadow: 0 0.5em 1em rgba (0, 0, 0, 0.2);
+  border-radius: 1rem;
+  color: var(--maroon);
+  top: 3em;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 2;
+}
+
+.menu li {
+  padding: 0.7em 0.5em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--maroon);
+  color: var(--seasalt);
+}
+
+.menu-open {
+  display: block;
+  opacity: 1;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .dropdown {
+    width: 80%;
+  }
+
+  .menu {
+    top: 2.5em;
+    max-height: 195px;
+  }
+
+  .menu li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (hover: hover) {
+  .select:hover {
+    color: var(--eerie-black);
+    box-shadow: none;
+    border: 2px var(--eerie-black) solid;
+    opacity: 0.8;
+    transition: ease-in-out 0.3s;
+  }
+
+  .menu li:hover {
+    background: var(--maroon);
+    color: var(--seasalt);
+    outline: none;
+  }
+}

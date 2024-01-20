@@ -1,0 +1,160 @@
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  text-align: left;
+  margin: 50px 30px 90px 30px;
+  color: aliceblue;
+}
+
+h2 {
+  text-align: center;
+  padding: 40px 40px 20px 40px;
+}
+
+h5 {
+  text-align: center;
+  padding: 0 40px 20px 40px;
+  border-bottom: #adb5bd 1px solid;
+}
+
+table {
+  margin: 0 30px 70px 30px;
+}
+
+table,
+th,
+tr {
+  text-align: center;
+  font-size: 0.8rem;
+  border-bottom: 3px dotted #adb5bd;
+}
+
+th {
+  padding: 8px;
+  border-bottom: 3px dotted var(--french-gray-2);
+}
+
+td {
+  padding: 8px;
+}
+
+#netWealthChart,
+#totalWealthChart {
+  max-width: 90%;
+  width: 40vw;
+  margin: 0 0 70px 0;
+}
+
+#home-total-net-wealth-info {
+  text-align: left;
+  font-size: 0.9rem;
+  margin: 0 30px 70px 30px;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid var(--seasalt);
+  border-radius: 12px;
+  outline: 1px solid rgb(248, 249, 250, 0.7);
+  outline-offset: 4px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  height: 85vh;
+  text-align: center;
+  margin: 8% 2% 8% 2%;
+  padding: 5% 2% 5% 2%;
+  color: var(--seasalt);
+  background-color: rgba(99, 92, 92, 0.08);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 3px 3px 3px rgba (0, 0, 0, 0.089);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 150%;
+  overflow-y: scroll;
+}
+
+.logo-img {
+  width: 100px;
+  margin-top: 0;
+  margin-bottom: 10%;
+  border-radius: 10px;
+}
+
+hr {
+  opacity: 0.6;
+  width: 30%;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  border: 1px solid var(--platinum);
+  border-radius: 30px;
+  box-shadow: 2px 2px 20px var(--slate-gray), -2px -2px 20px var(--slate-gray);
+}
+
+@media screen and (max-width: 768px) {
+  .overlay {
+    margin: 5% 5% 5% 5%;
+    padding: 3% 3% 10% 3%;
+  }
+
+  table,
+  th,
+  tr {
+    border-bottom: 1px solid var(--french-gray-2);
+  }
+
+  th {
+    border-bottom: 1px solid var(--french-gray-2);
+  }
+
+  .logo-img {
+    margin-top: 20%;
+    margin-bottom: 30px;
+  }
+
+  #netWealthChart,
+  #totalWealthChart {
+    max-width: 100%;
+    width: 60vw;
+    margin: 0 0 70px 0;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .logo {
+    order: 0;
+  }
+}
+
+@media (hover: hover) {
+  #home-total-net-wealth-info:hover {
+    background-color: var(--seasalt);
+    color: var(--onyx);
+    box-shadow: 5px 5px 15px var(--slate-gray), -5px -5px 15px var(--slate-gray);
+    transition: ease-in-out 0.3s;
+  }
+}

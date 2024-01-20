@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore and visualise the global wealth distribution using economic indicators."
+    />
+    <title>Wealth Distribution</title>
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="./css/global/global.css" />
+    <link rel="stylesheet" href="./css/utility/scrollbar.css" />
+    <link
+      rel="stylesheet"
+      href="./css/wealth-distribution/wealth-distribution.css"
+    />
+    <link rel="stylesheet" href="./css/utility/navbar.css" />
+    <link rel="stylesheet" href="./css/utility/dropdown.css" />
+    <link rel="stylesheet" href="./css/utility/double-slider.css" />
+    <link rel="stylesheet" href="./css/utility/slider.css" />
+  </head>
+  <body>
+    <!-- DESKTOP MENU  -->
+    <div class="menu-container">
+      <nav id="menu-desktop">
+        <img src="./img/ubs-logo-inv.png" class="logo" alt="" />
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li id="toggle-menu" class="active-desktop-link">
+            <a href="#">Wealth Distribution</a>
+          </li>
+          <li><a href="private-wealth.html">Private Wealth</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+
+        <div id="sub-menu" class="sub-menu-wrap">
+          <div class="sub-menu">
+            <div class="info">
+              <p>Home</p>
+            </div>
+            <hr />
+            <a
+              href="#intro"
+              id="sub-menu-link-1"
+              class="sub-menu-link main-sub-menu-link"
+            >
+              <p>Introduction</p>
+              <span>></span>
+            </a>
+            <a
+              href="#total-wealth-header"
+              id="sub-menu-link-2"
+              class="sub-menu-link"
+            >
+              <p>Total wealth</p>
+              <span>></span>
+            </a>
+            <a
+              href="#components-of-wealth-header"
+              id="sub-menu-link-3"
+              class="sub-menu-link"
+            >
+              <p>Components of wealth</p>
+              <span>></span>
+            </a>
+            <a
+              href="#market-details-header"
+              id="sub-menu-link-3"
+              class="sub-menu-link"
+            >
+              <p>Market details</p>
+              <span>></span>
+            </a>
+            <a
+              href="#wealth-estimates-main-header"
+              id="sub-menu-link-4"
+              class="sub-menu-link main-sub-menu-link"
+            >
+              <p>Wealth estimates</p>
+              <span>></span>
+            </a>
+            <a
+              href="#wealth-estimates-by-region-header"
+              id="sub-menu-link-5"
+              class="sub-menu-link"
+            >
+              <p>Wealth estimates by region</p>
+              <span>></span>
+            </a>
+            <a
+              href="#wealth-estimates-by-country-header"
+              id="sub-menu-link-6"
+              class="sub-menu-link"
+            >
+              <p>Wealth estimates by country</p>
+              <span>></span>
+            </a>
+            <a
+              href="#wealth-estimates-by-single-country-header"
+              id="sub-menu-link-7"
+              class="sub-menu-link"
+            >
+              <p>Wealth estimates by single country</p>
+              <span>></span>
+            </a>
+            <a
+              href="#sources-section"
+              id="sub-menu-link-8"
+              class="sub-menu-link main-sub-menu-link"
+            >
+              <p>Data sources</p>
+              <span>></span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu-container">
+      <div class="profile">
+        <img src="./img/ubs-logo-inv.png" id="mobile-logo" alt="" />
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <h3>Global Wealth<br /><span>Wealth Distribution</span></h3>
+        <hr id="mobile-hr" />
+        <ul>
+          <li>
+            <a href="home.html" class="mobile-menu-link"><p>Home</p> </a>
+          </li>
+          <li id="toggle-mobile-sub-menu">
+            <a href="#" class="active-mobile-sub-menu-link"
+              ><p>Wealth Distribution</p>
+              <span>></span></a
+            >
+            <div id="mobile-sub-menu">
+              <a
+                href="#intro"
+                id="sub-menu-link-1"
+                class="mobile-sub-menu-link main-sub-menu-link"
+              >
+                <p>Introduction</p>
+                <span>></span>
+              </a>
+              <a
+                href="#total-wealth-header"
+                id="sub-menu-link-2"
+                class="mobile-sub-menu-link"
+              >
+                <p>Total wealth</p>
+                <span>></span>
+              </a>
+              <a
+                href="#components-of-wealth-header"
+                id="sub-menu-link-3"
+                class="mobile-sub-menu-link"
+              >
+                <p>Components of wealth</p>
+                <span>></span>
+              </a>
+              <a
+                href="#market-details-header"
+                id="sub-menu-link-4"
+                class="mobile-sub-menu-link"
+              >
+                <p>Market details</p>
+                <span>></span>
+              </a>
+              <a
+                href="#wealth-estimates-main-header"
+                id="sub-menu-link-5"
+                class="mobile-sub-menu-link main-sub-menu-link"
+              >
+                <p>Wealth estimates</p>
+                <span>></span>
+              </a>
+              <a
+                href="#wealth-estimates-by-region-header"
+                id="sub-menu-link-6"
+                class="mobile-sub-menu-link"
+              >
+                <p>Wealth estimates by region</p>
+                <span>></span>
+              </a>
+              <a
+                href="#wealth-estimates-by-country-header"
+                id="sub-menu-link-7"
+                class="mobile-sub-menu-link"
+              >
+                <p>Wealth estimates by country</p>
+                <span>></span>
+              </a>
+              <a
+                href="#wealth-estimates-by-single-country-header"
+                id="sub-menu-link-8"
+                class="mobile-sub-menu-link"
+              >
+                <p>Wealth estimates by single country</p>
+                <span>></span>
+              </a>
+              <a
+                href="#sources-section"
+                id="sub-menu-link-9"
+                class="mobile-sub-menu-link main-sub-menu-link"
+              >
+                <p>Data sources</p>
+                <span>></span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <a href="private-wealth.html" class="mobile-menu-link"
+              >Private Wealth</a
+            >
+          </li>
+          <li><a href="about.html" class="mobile-menu-link">About</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h1 id="intro">INTRODUCTION</h1>
+
+    <section id="section-0"></section>
+
+    <h2 id="total-wealth">TOTAL WEALTH</h2>
+
+    <section id="section-1"></section>
+
+    <section id="section-2"></section>
+
+    <h2 id="components-of-wealth-header">COMPONENTS OF WEALTH</h2>
+
+    <section id="section-3"></section>
+
+    <h2 id="market-details-header">MARKET DETAILS</h2>
+
+    <section id="section-4"></section>
+
+    <h1 id="wealth-estimates-main-header">WEALTH ESTIMATES</h1>
+
+    <h2 id="wealth-estimates-by-region-header">WEALTH ESTIMATES BY REGION</h2>
+
+    <section id="section-6"></section>
+
+    <h2 id="wealth-estimates-by-country-header">WEALTH ESTIMATES BY COUNTRY</h2>
+
+    <section id="section-7"></section>
+
+    <h2 id="wealth-estimates-by-single-country-header">
+      WEALTH ESTIMATES BY SINGLE COUNTRY
+    </h2>
+
+    <section id="section-8"></section>
+
+    <section id="sources-section"></section>
+
+    <footer id="footer"></footer>
+
+    <!-- CHART.JS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4 /Chart.js"></script> -->
+    <!-- latest -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="./js/chart-js/chart.js"></script>
+
+    <!-- DATA -->
+    <script src="./country-boundaries/world-administrative-boundaries-data.js"></script>
+    <script src="./tabula/wealth-estimates/wealth-estimates-by-region.js"></script>
+    <script src="./tabula/wealth-estimates/wealth-estimates-by-country.js"></script>
+    <script src="./tabula/distribution-of-wealth/distribution.js"></script>
+    <script src="./tabula/components-of-wealth/components-of-wealth-usd.js"></script>
+    <script src="./tabula/components-of-wealth/components-of-wealth-percentage.js"></script>
+    <script src="./tabula/market-details/market-details.js"></script>
+    <script src="./tabula/sources/sources.js"></script>
+
+    <!-- SCRIPTS -->
+    <!-- math -->
+    <script src="./js/math/math.js"></script>
+    <!-- utility -->
+    <script src="./js/utility/detectMobile.js"></script>
+    <script src="./js/utility/navbar.js"></script>
+    <script src="./js/utility/dropdown.js"></script>
+    <script src="./js/utility/double-slider.js"></script>
+    <script src="./js/utility/colors.js"></script>
+    <script src="./js/utility/slider.js"></script>
+    <script src="./js/utility/footer.js"></script>
+
+    <!-- main -->
+    <script src="./js/wealth-distribution/wd-introduction.js"></script>
+    <script src="./js/wealth-distribution/wd-components-of-wealth.js"></script>
+    <script src="./js/wealth-distribution/wd-market-details.js"></script>
+    <script src="./js/wealth-distribution/wd-wealth-estimates-by-region.js"></script>
+    <script src="./js/wealth-distribution/wd-wealth-estimates-by-country.js"></script>
+    <script src="./js/wealth-distribution/wd-wealth-estimates-by-single-country.js"></script>
+    <script src="./js/wealth-distribution/wd-onload.js"></script>
+    <script src="./js/utility/add-sources.js"></script>
+  </body>
+</html>

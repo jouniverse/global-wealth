@@ -1,0 +1,125 @@
+.navbar {
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  text-decoration: none;
+  list-style-type: none;
+  margin-bottom: 60px;
+}
+
+.item a {
+  background-color: transparent;
+  color: var(--seasalt);
+  border: 1px solid var(--seasalt);
+  border-radius: 10px;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.active-mobile .item {
+  display: block;
+}
+
+.item.active a {
+  background-color: var(--seasalt);
+  outline: 1px solid var(--seasalt);
+  color: var(--onyx);
+  outline-offset: 4px;
+  animation: active-link-animation 8s infinite alternate;
+}
+
+@keyframes active-link-animation {
+  0% {
+    background-color: transparent;
+    color: var(--seasalt);
+  }
+  100% {
+    background-color: var(--seasalt);
+    color: var(--eerie-black);
+  }
+}
+
+.toggle {
+  margin-left: 0;
+  background-color: transparent;
+  display: none;
+}
+
+.toggle div {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 8px 8px;
+  border-radius: 10px;
+}
+
+.change .bar-1 {
+  transform: translate(0, 12px) rotate(45deg);
+  background-color: var(--red-6);
+  transition: ease-in-out 0.3s;
+}
+
+.change .bar-2 {
+  opacity: 0;
+  transition: ease-in-out 0.1s;
+}
+
+.change .bar-3 {
+  transform: translate(0, -15px) rotate(-45deg);
+  background-color: var(--brand-red);
+  transition: ease-in-out 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  .item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  .item a {
+    background-color: transparent;
+    color: white;
+    border: none;
+  }
+
+  .item.active a {
+    background-color: transparent;
+    outline: none;
+    color: var(--seasalt);
+    animation: none;
+  }
+
+  .toggle {
+    display: block;
+    margin-left: auto;
+    background-color: transparent;
+    border-radius: 10px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .navbar {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    background: none;
+  }
+
+  .item {
+    order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+}
+
+@media (hover: hover) {
+  .item a:hover {
+    background-color: var(--seasalt) !important;
+    color: var(--eerie-black) !important;
+    box-shadow: 5px 5px 15px var(--slate-gray), -5px -5px 15px var(--slate-gray);
+    transition: ease-in-out 0.3s;
+  }
+}
