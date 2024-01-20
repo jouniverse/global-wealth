@@ -52,7 +52,7 @@
   padding: 0.2em 0.5em;
   background-color: var(--ochre);
   border-left: 3px solid var(--eerie-black);
-  max-height: 230px;
+  max-height: 210px;
   overflow-y: scroll;
   box-shadow: 0 0.5em 1em rgba (0, 0, 0, 0.2);
   border-radius: 1rem;
