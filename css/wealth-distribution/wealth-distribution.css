@@ -14,10 +14,6 @@ body {
   cursor: pointer;
 }
 
-.rotated {
-  transform: scaleY(-1);
-}
-
 #section-0,
 #section-1,
 #section-2,
@@ -32,8 +28,6 @@ body {
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   border-radius: 50px;
-  /* border-top: 1px solid rgba(255, 255, 255, 0.4);
-  border-left: 1px solid rgba(255, 255, 255, 0.4); */
   border-top: 1px solid rgba(255, 202, 80, 0.4);
   border-left: 1px solid rgba(255, 202, 80, 0.4);
   padding: 100px 100px 150px 100px;
