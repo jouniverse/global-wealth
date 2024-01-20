@@ -1,6 +1,6 @@
 ## Global Wealth
 
-**Global Wealth** app is based on the annual global wealth report by UBS<sup>1</sup>.
+[**Global Wealth**](https://jouniverse.github.io/global-wealth/enter.html) app is based on the annual global wealth report by UBS<sup>1</sup>.
 
 With the app you can explore and visualise the global wealth distribution using different economic inficators. For many of the indicators only selected regions or markets are available in the data sources. Different descriptive statistics are provided in connection with the indicators.
 
