@@ -24,7 +24,7 @@ overlay.innerHTML += `<img class="logo-img" src="./img/ubs-logo-inv.png"></img><
 <h2>About</h2>
 <p><strong>Global Wealth</strong> app is based on the annual global wealth report by UBS<sup><a href="#ref-1" class="ref-link">1</a></sup>.
 </p>
-<p>With the app you can explore and visualise the global wealth distribution using different economic inficators. For many of the indicators only selected regions or markets are available in the data sources. Different descriptive statistics are provided in connection with the indicators.</p><hr>
+<p>With the app you can explore and visualise the global wealth distribution using different economic indicators. For many of the indicators only selected regions or markets are available in the data sources. Different descriptive statistics are provided in connection with the indicators.</p><hr>
 <p>The data was extracted from the Global Wealth Report by UBS using <strong>Tabula.</strong><sup href="#ref-2" class="ref-link"><a>2,3</a></sup></p>
 <hr>
 <canvas id="histogram"></canvas>
