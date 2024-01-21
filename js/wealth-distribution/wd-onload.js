@@ -1,10 +1,21 @@
 function setBg() {
+  let largeImage = new Image();
+  largeImage.src = "./img/gold-bg/gold-21-repeat.jpg";
+  let largeImageMobile = new Image();
+  largeImageMobile.src = "./img/gold-bg/gold-8-repeat.jpg";
+
   if (!detectMobile()) {
-    document.body.style.backgroundImage = `url('./img/gold-bg/gold-21-repeat.jpg`;
+    largeImage.onload = function () {
+      document.body.style.backgroundImage = `url('./img/gold-bg/gold-21-repeat.jpg')`;
+    };
   } else if (detectMobile() && window.innerWidth < 768) {
-    document.body.style.backgroundImage = `url('./img/gold-bg/gold-8-repeat.jpg`;
+    largeImageMobile.onload = function () {
+      document.body.style.backgroundImage = `url('./img/gold-bg/gold-8-repeat.jpg')`;
+    };
   } else {
-    document.body.style.backgroundImage = `url('./img/gold-bg/gold-21-repeat.jpg`;
+    largeImage.onload = function () {
+      document.body.style.backgroundImage = `url('./img/gold-bg/gold-21-repeat.jpg')`;
+    };
   }
 }
 
