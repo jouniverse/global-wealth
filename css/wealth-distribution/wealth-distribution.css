@@ -38,6 +38,16 @@ body {
   justify-content: center;
 }
 
+hr {
+  opacity: 0.6;
+  width: 50%;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  border: 1px solid var(--seasalt);
+  border-radius: 30px;
+  box-shadow: 2px 2px 20px var(--pirate-gold), -2px -2px 20px var(--ronchi);
+}
+
 #sources-info {
   color: var(--seasalt);
   margin: 6% 10% 5% 10%;
@@ -250,6 +260,10 @@ canvas {
     place-items: center;
     cursor: pointer;
     transition: background 0.5s ease-in-out;
+  }
+
+  hr {
+    visibility: none;
   }
 
   .txt-column {
