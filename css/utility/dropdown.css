@@ -1,7 +1,8 @@
 .dropdown {
   z-index: 3;
   margin: 4rem 2rem 2rem 2rem;
-  width: 40%;
+  width: 50%;
+  min-width: 50%;
   max-width: 100%;
   position: relative;
 }
@@ -52,7 +53,7 @@
   padding: 0.2em 0.5em;
   background-color: var(--ochre);
   border-left: 3px solid var(--eerie-black);
-  max-height: 210px;
+  max-height: 205px;
   overflow-y: scroll;
   box-shadow: 0 0.5em 1em rgba (0, 0, 0, 0.2);
   border-radius: 1rem;

@@ -48,7 +48,6 @@ nav ul li {
   display: inline-block;
   list-style: none;
   margin: 10px 10px;
-  /* background-image: var(--body-bg-gradient); */
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   padding: 10px 15px 10px 15px;
@@ -267,6 +266,16 @@ nav ul li.active-desktop-link a {
 #mobile-sub-menu {
   font-size: 0.6em;
   display: none;
+}
+
+@media (max-width: 900px) {
+  .logo {
+    width: 150px;
+  }
+
+  nav ul li {
+    margin: 10px 3px;
+  }
 }
 
 @media (max-width: 768px) {
