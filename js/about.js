@@ -43,6 +43,7 @@ let totalWealthHistogramData = countFrequencyWithFixedBinWidth(
   wealthEstimatesByCountry.at(-1).totalWealth,
   5000
 );
+console.log(totalWealthHistogramData);
 
 Chart.defaults.color = colorsHEX.platinum;
 
