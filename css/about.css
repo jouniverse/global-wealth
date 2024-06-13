@@ -86,6 +86,7 @@ td {
   margin-top: 0;
   margin-bottom: 10%;
   border-radius: 10px;
+  box-shadow: 3px 3px 50px var(--seasalt), -3px -3px 50px var(--platinum);
 }
 
 hr {

@@ -18,6 +18,8 @@ html {
   width: 100%;
   color: #ffffff;
   z-index: 1;
+  margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 #menu-desktop {
@@ -31,11 +33,13 @@ html {
 }
 
 .logo {
-  width: 200px;
+  margin-left: 50px;
+  width: 100px;
   border: 1px solid var(--seasalt);
   border-radius: 10px;
   outline: 1px solid var(--seasalt);
   outline-offset: 2px;
+  box-shadow: 3px 3px 30px var(--seasalt), -3px -3px 30px var(--platinum);
 }
 
 nav ul {
@@ -119,6 +123,7 @@ nav ul li.active-desktop-link a {
   padding: 20px;
   margin: 10px;
   border-radius: 10px;
+  box-shadow: 3px 3px 10px var(--seasalt), -3px -3px 10px var(--platinum);
 }
 
 .info {
@@ -161,6 +166,7 @@ nav ul li.active-desktop-link a {
   width: 100px;
   transition: 0.4s ease-in-out;
   border-radius: 10px;
+  box-shadow: 3px 3px 50px var(--seasalt), -3px -3px 50px var(--platinum);
 }
 
 #mobile-menu-container {

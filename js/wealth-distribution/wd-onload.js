@@ -1,20 +1,20 @@
 function setBg() {
   let largeImage = new Image();
-  largeImage.src = "./img/gold-bg/gold-21-repeat.jpg";
+  largeImage.src = "./img/agents_imgs/agents-1.png";
   let largeImageMobile = new Image();
-  largeImageMobile.src = "./img/gold-bg/gold-8-repeat.jpg";
+  largeImageMobile.src = "./img/agents_imgs/agents-1.png";
 
   if (!detectMobile()) {
     largeImage.onload = function () {
-      document.body.style.backgroundImage = `url('./img/gold-bg/gold-21-repeat.jpg')`;
+      document.body.style.backgroundImage = `url('./img/agents_imgs/agents-1.png')`;
     };
   } else if (detectMobile() && window.innerWidth < 768) {
     largeImageMobile.onload = function () {
-      document.body.style.backgroundImage = `url('./img/gold-bg/gold-8-repeat.jpg')`;
+      document.body.style.backgroundImage = `url('./img/agents_imgs/agents-1.png')`;
     };
   } else {
     largeImage.onload = function () {
-      document.body.style.backgroundImage = `url('./img/gold-bg/gold-21-repeat.jpg')`;
+      document.body.style.backgroundImage = `url('./img/agents_imgs/agents-1.png')`;
     };
   }
 }

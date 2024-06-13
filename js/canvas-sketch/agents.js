@@ -38,6 +38,7 @@ const sketch = ({ context, width, height }) => {
   }
 
   return ({ context, width, height }) => {
+    // background color
     context.fillStyle = "#212529ff";
     context.fillRect(0, 0, width, height);
 

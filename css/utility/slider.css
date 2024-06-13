@@ -24,7 +24,7 @@
   outline: none;
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: 5px 5px 10px var(--pirate-gold), -5px -5px 10px var(--tenne);
+  box-shadow: 5px 5px 20px var(--seasalt), -5px -5px 20px var(--platinum);
   outline: 1px solid var(--seasalt);
   outline-offset: 6px;
 }
@@ -91,7 +91,8 @@
   font-weight: 500;
   font-size: 0.7em;
   color: var(--platinum);
-  box-shadow: 5px 5px 10px var(--tenne), -5px -5px 10px var(--pirate-gold);
+  box-shadow: 5px 5px 50px var(--antiflash-white),
+    -5px -5px 50px var(--platinum);
   text-shadow: 5px 5px 10px var(--antiflash-white),
     -5px -5px 10px var(--seasalt);
 }

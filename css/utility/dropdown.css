@@ -14,7 +14,7 @@
 .select {
   background-color: transparent;
   color: var(--seasalt);
-  text-shadow: 5px 5px 10px var(--tenne), -5px -5px 10px var(--ochre);
+  /* text-shadow: 5px 5px 10px var(--tenne), -5px -5px 10px var(--ochre); */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +22,8 @@
   border-radius: 3rem;
   padding: 1.5rem;
   cursor: pointer;
-  box-shadow: 5px 5px 15px var(--tenne), -5px -5px 20px var(--pirate-gold);
+  box-shadow: 5px 5px 40px var(--antiflash-white),
+    -5px -5px 40px var(--french-gray);
   transition: background 0.3s;
 }
 
@@ -51,13 +52,15 @@
   margin-top: 2.5rem;
   list-style: none;
   padding: 0.2em 0.5em;
-  background-color: var(--ochre);
-  border-left: 3px solid var(--eerie-black);
+  background-color: var(--onyx);
+  border-left: 3px solid var(--antiflash-white);
   max-height: 205px;
   overflow-y: scroll;
-  box-shadow: 0 0.5em 1em rgba (0, 0, 0, 0.2);
+  /* box-shadow: 0 0.5em 1em rgba (0, 0, 0, 0.2); */
+  box-shadow: 5px 5px 40px var(--antiflash-white),
+    -5px -5px 40px var(--french-gray);
   border-radius: 1rem;
-  color: var(--maroon);
+  color: var(--seasalt);
   top: 3em;
   left: 50%;
   width: 100%;
@@ -76,7 +79,7 @@
 }
 
 .active {
-  background-color: var(--maroon);
+  background-color: var(--french-gray);
   color: var(--seasalt);
 }
 
@@ -103,16 +106,19 @@
 
 @media (hover: hover) {
   .select:hover {
-    color: var(--eerie-black);
+    /* color: var(--eerie-black); */
+    color: var(--platinum);
+    text-shadow: 5px 5px 20px var(--antiflash-white),
+      -5px -5px 20px var(--platinum);
     box-shadow: none;
-    border: 2px var(--eerie-black) solid;
+    /* border: 2px var(--eerie-black) solid; */
     opacity: 0.8;
     transition: ease-in-out 0.3s;
   }
 
   .menu li:hover {
-    background: var(--maroon);
-    color: var(--seasalt);
+    background: var(--french-gray);
+    color: var(--onyx);
     outline: none;
   }
 }

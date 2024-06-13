@@ -16,6 +16,6 @@ function addSlider(sliderName, callback) {
   function fillColor() {
     // Note: years slider
     let percent = ((slider.value - 2000) / 22) * 100;
-    slider.style.background = `linear-gradient(to right, #d7871a ${percent}%, #f8f9fa 100%)`;
+    slider.style.background = `linear-gradient(to right, #343a40 ${percent}%, #f8f9fa 100%)`;
   }
 }

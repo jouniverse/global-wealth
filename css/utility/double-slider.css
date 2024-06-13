@@ -6,7 +6,7 @@
   padding: 5px 10px 5px 10px;
   border: 1px solid var(--seasalt);
   border-radius: 30px;
-  box-shadow: 5px 5px 15px var(--tenne), -5px -5px 20px var(--pirate-gold);
+  box-shadow: 5px 5px 15px var(--seasalt), -5px -5px 20px var(--platinum);
 }
 
 .slider-double .slider-legend-container {
@@ -127,7 +127,8 @@
   font-weight: 500;
   font-size: 0.7em;
   color: var(--platinum);
-  box-shadow: 5px 5px 10px var(--maroon), -5px -5px 10px var(--pirate-gold);
+  box-shadow: 5px 5px 10px var(--antiflash-white),
+    -5px -5px 10px var(--platinum);
   text-shadow: 5px 5px 10px var(--antiflash-white),
     -5px -5px 10px var(--seasalt);
 }

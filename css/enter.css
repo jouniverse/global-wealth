@@ -53,12 +53,31 @@ canvas {
   margin-top: 0;
   margin-bottom: 10%;
   border-radius: 10px;
+  box-shadow: 3px 3px 50px var(--seasalt), -3px -3px 50px var(--platinum);
 }
 
 .item a {
+  /* animation */
+  background-image: none;
+  background-color: transparent;
+  animation: active-link-animation 8s infinite alternate;
+  /*  */
+  outline: 1px solid var(--seasalt);
+  outline-offset: 4px;
   border: 1px solid var(--seasalt);
   border-radius: 10px;
   padding: 10px 30px 10px 30px;
+}
+
+@keyframes active-link-animation {
+  0% {
+    background-color: transparent;
+    color: var(--seasalt);
+  }
+  100% {
+    background-color: var(--seasalt);
+    color: var(--eerie-black);
+  }
 }
 
 @media screen and (max-width: 768px) {

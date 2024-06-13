@@ -30,7 +30,7 @@ overlay.innerHTML += `<img class="logo-img" src="./img/ubs-logo-inv.png"></img><
 <canvas id="histogram"></canvas>
 <details id="histogram-info"><summary id="histogram-summary">Net wealth distribution 2022</summary><div>Wealth: ${wealthBinsWithWidth.bin[0]} USD  Bn: ${wealthBinsWithWidth.frequency[0]} countries</div><div>Wealth: ${wealthBinsWithWidth.bin[1]} USD Bn: ${wealthBinsWithWidth.frequency[1]} countries</div><div>Wealth: ${wealthBinsWithWidth.bin[2]} USD Bn: ${wealthBinsWithWidth.frequency[2]} countries</div><div>Wealth: ${wealthBinsWithWidth.bin[3]} USD Bn: ${wealthBinsWithWidth.frequency[3]} countries</div><div>Wealth: ${wealthBinsWithWidth.bin[4]} USD Bn: ${wealthBinsWithWidth.frequency[4]} countries</div><div>Wealth: ${wealthBinsWithWidth.bin[5]} USD Bn: ${wealthBinsWithWidth.frequency[5]} countries</div><div>Wealth: ${wealthBinsWithWidth.bin[6]} USD Bn: ${wealthBinsWithWidth.frequency[6]} countries</div></details>
 <hr>
-<sup id="ref-1">1<a class="ref-link" href="https://www.ubs.com/global/en/family-office-uhnw/reports/global-wealth-report-2023.html"> UBS Global Wealth Report 2023</a></sup> 
+<sup id="ref-1">1<a class="ref-link" href="https://www.ubs.com/global/en/family-office-uhnw/reports/global-wealth-report-2023.html">UBS Global Wealth Report 2023</a></sup> 
 <sup id="ref-2">2<a class="ref-link" href="https://tabula.technology/"> Tabula</a></sup>
 <sup>3<a class="ref-link" href="https://github.com/tabulapdf/tabula"> Tabula GitHub</a></sup>
 <hr><footer id="copyright">
