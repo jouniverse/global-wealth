@@ -115,7 +115,10 @@ function init_wealth_estimates_by_country() {
   selectedWealthEstimatesByCountry.addEventListener("selectedChange", () => {
     wealthEstimatesByCountryChart.style.display = "block";
     wealthEstimatesByCountryInfo.style.display = "block";
-    if (selectedWealthEstimatesByCountry.innerText === "Select") {
+    if (
+      selectedWealthEstimatesByCountry.innerText === "Select" ||
+      !selectedWealthEstimatesByCountry.innerText
+    ) {
       wealthEstimatesByCountryChart.style.display = "none";
       wealthEstimatesByCountryInfo.style.display = "none";
       return;

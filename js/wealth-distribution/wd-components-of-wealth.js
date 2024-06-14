@@ -47,7 +47,10 @@ function init_components() {
   selectedComponentsOfWealthUsd.addEventListener("selectedChange", () => {
     componentsOfWealthChart.style.display = "block";
     componentsOfWealthPctChart.style.display = "block";
-    if (selectedComponentsOfWealthUsd.innerText === "Select") {
+    if (
+      selectedComponentsOfWealthUsd.innerText === "Select" ||
+      !selectedComponentsOfWealthUsd.innerText
+    ) {
       // Handle the "Select" option gracefully (e.g., hide or clear the chart)
       componentsOfWealthChart.style.display = "none";
       componentsOfWealthPctChart.style.display = "none";

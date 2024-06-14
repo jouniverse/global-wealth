@@ -14,7 +14,6 @@
 .select {
   background-color: transparent;
   color: var(--seasalt);
-  /* text-shadow: 5px 5px 10px var(--tenne), -5px -5px 10px var(--ochre); */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,7 +55,6 @@
   border-left: 3px solid var(--antiflash-white);
   max-height: 205px;
   overflow-y: scroll;
-  /* box-shadow: 0 0.5em 1em rgba (0, 0, 0, 0.2); */
   box-shadow: 5px 5px 40px var(--antiflash-white),
     -5px -5px 40px var(--french-gray);
   border-radius: 1rem;
@@ -106,12 +104,10 @@
 
 @media (hover: hover) {
   .select:hover {
-    /* color: var(--eerie-black); */
     color: var(--platinum);
     text-shadow: 5px 5px 20px var(--antiflash-white),
       -5px -5px 20px var(--platinum);
     box-shadow: none;
-    /* border: 2px var(--eerie-black) solid; */
     opacity: 0.8;
     transition: ease-in-out 0.3s;
   }

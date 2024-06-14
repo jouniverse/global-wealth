@@ -129,7 +129,10 @@ function init_wealth_estimates_by_single_country() {
       wealthComponentsInfo.style.display = "block";
       wealthEstimatesBySingleCountryShareOfWealthChart.style.display = "block";
       shareOfWealthInfo.style.display = "block";
-      if (selectedWealthEstimatesBySingleCountry.innerText === "Select") {
+      if (
+        selectedWealthEstimatesBySingleCountry.innerText === "Select" ||
+        !selectedWealthEstimatesBySingleCountry.innerText
+      ) {
         wealthEstimatesBySingleCountryTotalWealthChart.style.display = "none";
         totalWealthInfo.style.display = "none";
         wealthEstimatesBySingleCountryWealthPerAdultChart.style.display =

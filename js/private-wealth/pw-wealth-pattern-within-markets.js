@@ -60,7 +60,10 @@ function init_wealth_pattern() {
     wealthPatternChart.style.display = "block";
     wealthPatternStatisticChart.style.display = "block";
     wealthPatternInfo.style.display = "block";
-    if (selectedWealthPattern.innerText === "Select") {
+    if (
+      selectedWealthPattern.innerText === "Select" ||
+      !selectedWealthPattern.innerText
+    ) {
       wealthPatternChart.style.display = "none";
       wealthPatternStatisticChart.style.display = "none";
       wealthPatternInfo.style.display = "none";

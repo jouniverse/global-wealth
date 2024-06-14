@@ -28,3 +28,41 @@ window.onload = function () {
   init_wealth_estimates_by_country();
   init_wealth_estimates_by_single_country();
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const headers = [
+    "#intro",
+    "#total-wealth-header",
+    "#components-of-wealth-header",
+    "#market-details-header",
+    "#wealth-estimates-main-header",
+    "#wealth-estimates-by-region-header",
+    "#wealth-estimates-by-country-header",
+    "#wealth-estimates-by-single-country-header",
+  ];
+
+  headers.forEach((headerId) => {
+    const header = document.querySelector(headerId);
+    if (!header) return; // Skip if the header doesn't exist
+
+    const details = header.nextElementSibling;
+    if (details && details.tagName.toLowerCase() === "details") {
+      const nextHeader = details.nextElementSibling;
+
+      // Find the next header element
+      while (nextHeader && !headers.includes("#" + nextHeader.id)) {
+        nextHeader = nextHeader.nextElementSibling;
+      }
+
+      if (nextHeader && headers.includes("#" + nextHeader.id)) {
+        details.addEventListener("toggle", () => {
+          if (details.open) {
+            nextHeader.style.marginTop = "160px";
+          } else {
+            nextHeader.style.marginTop = "30px";
+          }
+        });
+      }
+    }
+  });
+});

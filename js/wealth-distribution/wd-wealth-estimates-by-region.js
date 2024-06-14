@@ -107,7 +107,10 @@ function init_wealth_estimates_by_region() {
   selectedWealthEstimatesByRegion.addEventListener("selectedChange", () => {
     wealthEstimatesByRegionChart.style.display = "block";
     wealthEstimatesByRegionInfo.style.display = "block";
-    if (selectedWealthEstimatesByRegion.innerText === "Select") {
+    if (
+      selectedWealthEstimatesByRegion.innerText === "Select" ||
+      !selectedWealthEstimatesByRegion.innerText
+    ) {
       wealthEstimatesByRegionChart.style.display = "none";
       wealthEstimatesByRegionInfo.style.display = "none";
       return;

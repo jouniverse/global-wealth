@@ -39,7 +39,10 @@ function init_market_details() {
   selectedMarketDetails.addEventListener("selectedChange", (e) => {
     marketDetailsChart.style.display = "block";
     marketDetailsInfo.style.display = "block";
-    if (selectedMarketDetails.innerText === "Select") {
+    if (
+      selectedMarketDetails.innerText === "Select" ||
+      selectedMarketDetails.innerText === ""
+    ) {
       marketDetailsChart.style.display = "none";
       marketDetailsInfo.style.display = "none";
       return;

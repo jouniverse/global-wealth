@@ -114,7 +114,10 @@ function init_hnwi_deciles() {
   selectedHnwiDecilesRegion.addEventListener("selectedChange", (e) => {
     hnwiDecilesRegionChart.style.display = "block";
     hnwiDecilesRegionInfo.style.display = "block";
-    if (selectedHnwiDecilesRegion.innerText === "Select") {
+    if (
+      selectedHnwiDecilesRegion.innerText === "Select" ||
+      !selectedHnwiDecilesRegion.innerText
+    ) {
       hnwiDecilesRegionChart.style.display = "none";
       hnwiDecilesRegionInfo.style.display = "none";
       return;
@@ -152,7 +155,10 @@ function init_hnwi_deciles() {
   selectedHnwiDecilesCountry.addEventListener("selectedChange", (e) => {
     hnwiDecilesCountryChart.style.display = "block";
     hnwiDecilesCountryInfo.style.display = "block";
-    if (selectedHnwiDecilesCountry.innerText === "Select") {
+    if (
+      selectedHnwiDecilesCountry.innerText === "Select" ||
+      !selectedHnwiDecilesCountry.innerText
+    ) {
       hnwiDecilesCountryChart.style.display = "none";
       hnwiDecilesCountryInfo.style.display = "none";
       return;

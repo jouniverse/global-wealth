@@ -51,7 +51,10 @@ function init_hnwi_region() {
     hnwiRegionPctChart.style.display = "block";
     hnwiRegionInfo.style.display = "block";
     hnwiRegionPctInfo.style.display = "block";
-    if (selectedHnwiRegion.innerText === "Select") {
+    if (
+      selectedHnwiRegion.innerText === "Select" ||
+      selectedHnwiRegion.innerText == ""
+    ) {
       hnwiRegionChart.style.display = "none";
       hnwiRegionPctChart.style.display = "none";
       hnwiRegionInfo.style.display = "none";

@@ -89,7 +89,10 @@ function init_gains_and_losses() {
     mainGainsInfo.style.display = "block";
     mainLossesChart.style.display = "block";
     mainLossesInfo.style.display = "block";
-    if (selectedMainGainsAndLosses.innerText === "Select") {
+    if (
+      selectedMainGainsAndLosses.innerText === "Select" ||
+      selectedMainGainsAndLosses.innerText === ""
+    ) {
       globalGainsAndLossesBalance.style.display = "none";
       mainGainsChart.style.display = "none";
       mainGainsInfo.style.display = "none";

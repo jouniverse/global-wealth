@@ -100,7 +100,10 @@ function init_hnwi_country() {
   selectedHnwiCountry.addEventListener("selectedChange", (e) => {
     hnwiCountryChart.style.display = "block";
     hnwiCountryInfo.style.display = "block";
-    if (selectedHnwiCountry.innerText === "Select") {
+    if (
+      selectedHnwiCountry.innerText === "Select" ||
+      selectedHnwiCountry.innerText === ""
+    ) {
       hnwiCountryChart.style.display = "none";
       hnwiCountryInfo.style.display = "none";
       return;
@@ -169,7 +172,10 @@ function init_hnwi_country() {
     hnwiCountryStatisticChart.style.display = "block";
     hnwiCountryStatisticInfo.style.display = "block";
     hnwiCountryDoubleSlider.style.display = "block";
-    if (selectedHnwiCountryStatistic.innerText === "Select") {
+    if (
+      selectedHnwiCountryStatistic.innerText === "Select" ||
+      selectedHnwiCountryStatistic.innerText === ""
+    ) {
       hnwiCountryStatisticChart.style.display = "none";
       hnwiCountryStatisticInfo.style.display = "none";
       hnwiCountryDoubleSlider.style.display = "none";

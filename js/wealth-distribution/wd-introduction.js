@@ -93,7 +93,7 @@ function init_introduction() {
   selectedTotalWealth.addEventListener("selectedChange", () => {
     totalWealthChart.style.display = "block";
     totalWealthByRegion = selectedTotalWealth.innerText;
-    if (totalWealthByRegion === "Select") {
+    if (totalWealthByRegion === "Select" || !totalWealthByRegion) {
       totalWealthChart.style.display = "none";
       return;
     }
@@ -139,7 +139,10 @@ function init_introduction() {
 
   selectedWealthDistribution.addEventListener("selectedChange", () => {
     wealthDistributionChart.style.display = "block";
-    if (selectedWealthDistribution.innerText === "Select") {
+    if (
+      selectedWealthDistribution.innerText === "Select" ||
+      !selectedWealthDistribution.innerText
+    ) {
       wealthDistributionChart.style.display = "none";
       return;
     }

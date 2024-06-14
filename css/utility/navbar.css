@@ -170,6 +170,7 @@ nav ul li.active-desktop-link a {
 }
 
 #mobile-menu-container {
+  margin-top: -90px;
   display: none;
   background: transparent;
   width: 100%;
