@@ -70,9 +70,7 @@ hr {
 #sources-info-household-data-sources,
 #sources-info-survey-data-sources {
   color: var(--seasalt);
-  /* text-shadow: 5px 5px 10px var(--tenne), -5px -5px 10px var(--ochre); */
   margin: 6% 10% 5% 10%;
-  /* background-image: var(--body-bg-gradient); */
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   border-radius: 25px;

@@ -12,7 +12,8 @@ sectionThreeOne.innerHTML = `<p class="txt-column" id="add-table">Percentage mem
 <details id="hnwi-deciles-region-info"><summary id="hnwi-deciles-region-summary">Deciles by region</summary></details>`;
 
 function generateTable(data) {
-  let html = '<br><br><div id="table"><table>';
+  let html =
+    '<br><br><details class="table-details"><summary class="table-summary">Deciles by region</summary><div id="table"><table>';
 
   html += "<tr><th>Decile</th>";
   html += `<th>${data.market[0]}</th>`;
@@ -34,7 +35,7 @@ function generateTable(data) {
     }
   }
 
-  html += "</table></div>";
+  html += "</table></div></details>";
   return html;
 }
 

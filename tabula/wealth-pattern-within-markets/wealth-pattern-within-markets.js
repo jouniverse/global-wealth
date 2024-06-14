@@ -398,7 +398,8 @@ function getWealthPatternWithinMarketsData(data, country) {
 }
 
 function generateWorldDataTable(data) {
-  let html = '<br><br><div id="table"><table>';
+  let html =
+    '<br><br><details id="wealth-pattern-table-details"><summary class="wealth-pattern-table-summary">Wealth distribution table</summary><div id="table"><table>';
   html += `<tr><th>${data.market[0]}</th>`;
   html += `<th>${data.market[1]}</th>`;
   html += `<th>${data.market[2]}</th>`;
@@ -425,7 +426,7 @@ function generateWorldDataTable(data) {
     }
   }
 
-  html += "</table></div>";
+  html += "</table></div></details>";
   return html;
 }
 

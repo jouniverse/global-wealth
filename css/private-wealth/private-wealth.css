@@ -100,7 +100,7 @@ table {
 
 th,
 td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--seasalt);
   padding: 10px;
   text-align: center;
 }
@@ -197,14 +197,12 @@ canvas {
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   border-left: 1px solid rgba(255, 255, 255, 0.4);
   color: var(--seasalt);
-  /* text-shadow: 5px 5px 10px var(--tenne), -5px -5px 10px var(--ochre); */
   width: 100%;
   margin-top: 40px;
   padding: 10px;
 }
 
 #intro-txt {
-  /* background-image: var(--body-bg-gradient); */
   padding: 50px 50px 50px 50px;
   border-radius: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.4);
@@ -219,7 +217,6 @@ canvas {
 .txt-column {
   text-align: left;
   color: var(--seasalt);
-  /* text-shadow: 5px 5px 10px var(--tenne), -5px -5px 10px var(--ochre); */
   padding: 20px;
 }
 
@@ -375,8 +372,6 @@ sup a {
   #main-gains-info:hover,
   #main-losses-info:hover,
   #wealth-pattern-info:hover {
-    /* box-shadow: 3px 3px 15px var(--tenne), -3px -3px 15px var(--gamboge);
-    transition: ease-in-out 0.3s; */
     box-shadow: 3px 3px 40px var(--seasalt), -3px -3px 40px var(--platinum);
   }
 
@@ -393,7 +388,6 @@ sup a {
     background-color: var(--antiflash-white);
     color: var(--onyx);
     text-shadow: none;
-    /* box-shadow: 3px 3px 15px var(--tenne), -3px -3px 15px var(--gamboge); */
     box-shadow: 3px 3px 40px var(--seasalt), -3px -3px 40px var(--platinum);
     transition: ease-in-out 0.3s;
   }
@@ -406,9 +400,8 @@ sup a {
 
   #wealth-pattern-world table:hover,
   #section-3-1 table:hover {
-    color: var(--onyx);
+    color: var(--seasalt);
     text-shadow: none;
-    /* box-shadow: 3px 3px 15px var(--tenne), -3px -3px 15px var(--gamboge); */
     box-shadow: 3px 3px 40px var(--seasalt), -3px -3px 40px var(--platinum);
     transition: ease-in-out 0.3s;
   }
