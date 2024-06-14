@@ -13,7 +13,7 @@ sectionThreeOne.innerHTML = `<p class="txt-column" id="add-table">Percentage mem
 
 function generateTable(data) {
   let html =
-    '<br><br><details class="table-details"><summary class="table-summary">Deciles by region</summary><div id="table"><table>';
+    '<br><br><details class="table-details"><summary class="table-summary">Deciles by Region Globally</summary><div id="table"><table>';
 
   html += "<tr><th>Decile</th>";
   html += `<th>${data.market[0]}</th>`;
