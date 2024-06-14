@@ -21,6 +21,10 @@ p {
 }
 
 h2 {
+  font-family: "Lora", serif;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
   text-align: center;
   padding: 40px 40px 20px 40px;
 }
@@ -120,6 +124,10 @@ hr {
   .overlay {
     margin: 5% 5% 5% 5%;
     padding: 3% 3% 10% 3%;
+  }
+
+  h2 {
+    font-size: 2rem;
   }
 
   table,

@@ -317,7 +317,7 @@ canvas {
   #wealth-estimates-by-country-header,
   #wealth-estimates-by-single-country-header {
     font-size: 2rem;
-    line-height: 1;
+    /* line-height: 1; */
     margin: 3%;
     width: 95%;
     background-image: none;
