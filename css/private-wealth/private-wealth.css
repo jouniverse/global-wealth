@@ -195,7 +195,7 @@ canvas {
   padding: 20px 10px 20px 20px;
   outline: 2px solid var(--antiflash-white);
   outline-offset: 4px;
-  box-shadow: 3px 3px 40px var(--seasalt), -3px -3px 40px var(--platinum);
+  /* box-shadow: 3px 3px 40px var(--seasalt), -3px -3px 40px var(--platinum); */
 }
 
 #wealth-estimates-by-single-country-header {
