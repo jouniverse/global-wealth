@@ -9,10 +9,10 @@ html {
 html,
 body {
   height: 100%;
+  font-family: "Fira Code", monospace;
 }
 body {
   background: #21252b;
-
   color: #d3ddef;
 }
 
@@ -98,12 +98,20 @@ body {
   position: absolute;
   background: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 5px;
   display: none;
   pointer-events: none;
   font-size: 14px;
   z-index: 1000;
+  min-width: 250px;
+  max-width: 350px;
+}
+
+.chart-container {
+  width: 100%;
+  height: 150px;
+  margin-top: 10px;
 }
 
 /* Mobile restriction overlay */
