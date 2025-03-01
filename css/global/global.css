@@ -27,7 +27,7 @@
   --red-8: #450000;
   --red-9: #2d0000;
 
-  --maroon: #833a01;
+  /* --maroon: #833a01;
   --tenne: #ab5a02;
   --rust: #a55408;
   --pirate-gold: #bb7926;
@@ -38,17 +38,21 @@
   --tulip-tree: #e5a53d;
   --ronchi: #eaaa49;
   --dark-tangerine: #f7a91c;
-  --casablanca: #f2bf5d;
+  --casablanca: #f2bf5d; */
 
   --border-radius: 12px;
+
+  interpolate-size: allow-keywords;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
+/* @import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap"); */
+
 * {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Fira", sans-serif;
   /* font-family: "Lora", serif; */
   line-height: 1.5rem;
   letter-spacing: 0.1rem;
@@ -60,4 +64,63 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+details * {
+  margin: 0;
+  padding: 0;
+}
+
+details::details-content {
+  block-size: 0;
+  transition: block-size 0.5s, content-visibility 0.5s, opacity 0.5s,
+    filter 0.5s;
+  transition-behavior: allow-discrete;
+  opacity: 0;
+  filter: blur(0px);
+  /* overflow: hidden; */
+}
+
+details[open]::details-content {
+  block-size: auto;
+  opacity: 1;
+  filter: blur(0px);
+}
+
+details:not([open])::details-content {
+  opacity: 0;
+  filter: blur(5px);
+}
+
+detail > p {
+  padding-block: 1rem;
+}
+
+summary {
+  /* line-height: 1; */
+  margin-inline-start: 1rem;
+}
+
+summary::marker {
+  content: "";
+  /* font-size: 1.5em; */
+  /* color: var(--seasalt); */
+}
+
+/* summary:hover::marker {
+  color: var(--brand-red);
+} */
+
+/* Special handling for sources sections - no animations */
+details:has(#sources-info-household-data-sources)::details-content,
+details:has(#sources-info-survey-data-sources)::details-content {
+  transition: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Remove transitions for the specific elements */
+#sources-info-household-data-sources,
+#sources-info-survey-data-sources {
+  transition: none !important;
 }

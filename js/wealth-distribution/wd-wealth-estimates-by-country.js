@@ -459,7 +459,7 @@ let wealthEstimatesByCountryBarChart = new Chart(
           backgroundColor: "rgba(233, 236, 239, 0.3)",
           hoverBackgroundColor: colorsHEX.onyx,
           borderColor: colorsHEX.antiflashWhite,
-          borderWidth: 2,
+          borderWidth: 1,
           borderRadius: 30,
           borderSkipped: false,
           barPercentage: 0.8,

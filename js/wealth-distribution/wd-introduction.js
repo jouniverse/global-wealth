@@ -10,8 +10,11 @@ let distributionRegions = [
 ];
 
 let sectionZero = document.getElementById("section-0");
-sectionZero.innerHTML += `<p class="txt-column intro-txt">The objective of the <strong><a href="https://www.ubs.com/global/en/family-office-uhnw/reports/global-wealth-report-2023.html"> UBS Global Wealth report </a></strong> is to present estimations of household wealth across the globe for each year starting from 2000. Specifically, the report focuses on analyzing the distribution of individual net worth within and across various markets. Individual net worth is defined as the marketable value of financial assets and non-financial assets (primarily housing and land) minus debts. Notably, no single market worldwide possesses a comprehensive source of information on personal wealth, and numerous low- and middle-income markets lack substantial direct evidence. To formulate the global wealth distribution, the report combines the wealth level of each market with details of its wealth pattern. In recent years, significant advancements have been made in the examination of global household wealth, with improved data quality and increased availability for more markets. Despite this progress, there is still much work to be done to enhance the quality and frequency of wealth data and to expand data availability to a greater number of markets.</p><hr>
-<canvas id="wealth-distribution-map"></canvas>`;
+sectionZero.innerHTML += `<p class="txt-column intro-txt">The objective of the <strong><a href="https://www.ubs.com/global/en/family-office-uhnw/reports/global-wealth-report-2023.html"> UBS Global Wealth report </a></strong> is to present estimations of household wealth across the globe for each year starting from 2000. Specifically, the report focuses on analyzing the distribution of individual net worth within and across various markets. Individual net worth is defined as the marketable value of financial assets and non-financial assets (primarily housing and land) minus debts. Notably, no single market worldwide possesses a comprehensive source of information on personal wealth, and numerous low- and middle-income markets lack substantial direct evidence. To formulate the global wealth distribution, the report combines the wealth level of each market with details of its wealth pattern. In recent years, significant advancements have been made in the examination of global household wealth, with improved data quality and increased availability for more markets. Despite this progress, there is still much work to be done to enhance the quality and frequency of wealth data and to expand data availability to a greater number of markets.</p><br>
+<div class="world-map-button-container">
+  <a href="world-map.html" class="world-map-button">View Interactive World Map</a>
+  <p class="world-map-description">Explore the global wealth distribution by country. View net wealth data for 2021 and 2022.</p>
+</div>`;
 
 let sectionOne = document.getElementById("section-1");
 sectionOne.innerHTML += `<p class="txt-column">
@@ -39,23 +42,6 @@ Wealth distribution by wealth range from poorest to richest in USD Bn for select
   <ul class="menu"></ul>
   </div>
   <canvas id="wealth-distribution-by-country-chart"></canvas>`;
-
-let wealthDistributionMap = document.getElementById("wealth-distribution-map");
-// wealthDistributionMap.style.display = "none";
-
-let mapData = [];
-for (let i = 0; i < countryBoundaries.geoPointX.length; i++) {
-  mapData.push({
-    x: countryBoundaries.geoPointY[i],
-    y: countryBoundaries.geoPointX[i],
-  });
-}
-
-if (detectMobile()) {
-  wealthDistributionMap.style.display = "none";
-}
-
-// console.log(mapData);
 
 let totalWealthChart = document.getElementById("total-wealth-by-region-chart");
 totalWealthChart.style.display = "none";
@@ -162,7 +148,7 @@ function init_introduction() {
     wealthDistributionBarChart.data.datasets[0].data = stackOneData;
     wealthDistributionBarChart.data.datasets[1].data = stackTwoData;
     wealthDistributionBarChart.data.datasets[0].label = `${selectedWealthDistribution.innerText} (% of world adults)`;
-    wealthDistributionBarChart.data.datasets[1].label = `${selectedWealthDistribution.innerText} (number adults by wealth range)`;
+    wealthDistributionBarChart.data.datasets[1].label = `${selectedWealthDistribution.innerText} (number of adults by wealth range)`;
 
     if (detectMobile()) {
       Chart.defaults.font.size = 8;
@@ -178,86 +164,6 @@ function init_introduction() {
   });
 }
 
-const wealthDistributionMapChart = new Chart("wealth-distribution-map", {
-  type: "scatter",
-  data: {
-    datasets: [
-      {
-        label: "Global Wealth Distribution",
-        data: mapData,
-        pointStyle: "circle",
-        pointBackgroundColor: colorsHEX.seasalt,
-        hoverBackgroundColor: colorsHEX.eerieBlack,
-        borderColor: [colorsHEX.frenchGray],
-        borderWidth: 1,
-        hoverBorderColor: [colorsHEX.eerieBlack],
-        radius: 3,
-        pointHoverRadius: 6,
-      },
-    ],
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: true,
-    aspectRatio: 2,
-    scales: {
-      x: {
-        type: "linear",
-        position: "bottom",
-        grid: {
-          display: false,
-        },
-        display: false,
-      },
-      y: {
-        beginAtZero: true,
-        grid: {
-          display: false,
-        },
-        display: false,
-      },
-    },
-    plugins: {
-      tooltip: {
-        callbacks: {
-          title: function (context) {
-            return "";
-          },
-          label: function (context) {
-            let distributionCountries = countryBoundaries.name;
-            let lblArray = [];
-            lblArray.push(`${distributionCountries[context.dataIndex]}`);
-            lblArray.push(
-              `Net wealth 2021: ${
-                year_2021.totalWealth[context.dataIndex]
-              } USD Bn`
-            );
-            lblArray.push(
-              `Net wealth 2022: ${
-                year_2022.totalWealth[context.dataIndex]
-              } USD Bn`
-            );
-            lblArray.push(
-              `Change: ${roundTo(
-                percentChange([
-                  year_2021.totalWealth[context.dataIndex],
-                  year_2022.totalWealth[context.dataIndex],
-                ]),
-                3
-              )} %`
-            );
-            return lblArray;
-          },
-        },
-        displayColors: false,
-      },
-      legend: {
-        display: false,
-      },
-    },
-  },
-});
-
 let totalWealthBarChart = new Chart("total-wealth-by-region-chart", {
   type: "bar",
   data: {
@@ -269,7 +175,7 @@ let totalWealthBarChart = new Chart("total-wealth-by-region-chart", {
         backgroundColor: "rgba(233, 236, 239, 0.3)",
         hoverBackgroundColor: colorsHEX.antiflashWhite,
         borderColor: colorsHEX.antiflashWhite,
-        borderWidth: 5,
+        borderWidth: 2,
         borderRadius: 18,
         borderSkipped: false,
         barPercentage: 0.8,
@@ -279,9 +185,9 @@ let totalWealthBarChart = new Chart("total-wealth-by-region-chart", {
         label: "",
         data: [],
         backgroundColor: "rgba(52, 58, 64, 0.3)",
-        hoverBackgroundColor: colorsHEX.onyx,
-        borderColor: colorsHEX.onyx,
-        borderWidth: 5,
+        hoverBackgroundColor: colorsHEX.platinum,
+        borderColor: colorsHEX.platinum,
+        borderWidth: 2,
         borderRadius: 18,
         borderSkipped: false,
         barPercentage: 0.8,
@@ -350,7 +256,7 @@ let wealthDistributionBarChart = new Chart(
           backgroundColor: "rgba(233, 236, 239, 0.3)",
           hoverBackgroundColor: colorsHEX.antiflashWhite,
           borderColor: colorsHEX.antiflashWhite,
-          borderWidth: 5,
+          borderWidth: 2,
           borderRadius: 36,
           borderSkipped: false,
           barPercentage: 0.5,
@@ -361,9 +267,9 @@ let wealthDistributionBarChart = new Chart(
           label: "",
           data: [],
           backgroundColor: "rgba(52, 58, 64, 0.3)",
-          hoverBackgroundColor: colorsHEX.onyx,
-          borderColor: colorsHEX.onyx,
-          borderWidth: 5,
+          hoverBackgroundColor: colorsHEX.platinum,
+          borderColor: colorsHEX.platinum,
+          borderWidth: 2,
           borderRadius: 36,
           borderSkipped: false,
           barPercentage: 0.5,

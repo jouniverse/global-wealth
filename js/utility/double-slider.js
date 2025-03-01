@@ -55,8 +55,6 @@ function addDoubleSlider(
     }
   }
 
-  // fillColor();
-
   sliderOne.oninput = function slideOne() {
     if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
       sliderOne.value = parseInt(sliderTwo.value) - minGap;
@@ -65,7 +63,6 @@ function addDoubleSlider(
       displayValOne.textContent = `Years: ${data.y[sliderOne.value]}`;
     }
 
-    // fillColor();
     if (typeof callback === "function") {
       callback(sliderOne.value, sliderTwo.value);
     }
@@ -78,18 +75,8 @@ function addDoubleSlider(
     if (year) {
       displayValTwo.textContent = data.y[sliderTwo.value];
     }
-    // fillColor();
     if (typeof callback === "function") {
       callback(sliderOne.value, sliderTwo.value);
     }
   };
-
-  // deprecate fillColor()
-  // function fillColor() {
-  //   let percent1 = (sliderOne.value / maxOne) * 100;
-  //   let percent2 = (sliderTwo.value / maxTwo) * 100;
-  //   // SLIDER TRACK STYLE (COLOR) BETWEEN THE THUMBS
-  //   // sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #195973 ${percent1}% , #195973 ${percent2}%, #dadae5 ${percent2}%)`;
-  //   sliderTrack.style.background = `linear-gradient(to right, white ${percent1}% , #343a40ff ${percent1}% , #6c757dff ${percent2}%, white ${percent2}%)`;
-  // }
 }

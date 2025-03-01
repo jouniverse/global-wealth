@@ -1,26 +1,32 @@
-// function setBg() {
-//   let largeImage = new Image();
-//   largeImage.src = "./img/agents_imgs/agents-1.png";
-//   let largeImageMobile = new Image();
-//   largeImageMobile.src = "./img/agents_imgs/agents-1.png";
+// Create mobile restriction overlay
+function createMobileRestriction() {
+  const mobileRestriction = document.createElement("div");
+  mobileRestriction.classList.add("mobile-restriction");
+  mobileRestriction.innerHTML = `
+    <h1>Desktop Only</h1>
+    <p>This application is optimized for desktop viewing only. Please access this site on a device with a screen width of at least 1050px for the best experience.</p>
+  `;
+  document.body.appendChild(mobileRestriction);
 
-//   if (!detectMobile()) {
-//     largeImage.onload = function () {
-//       document.body.style.backgroundImage = `url('./img/agents_imgs/agents-1.png')`;
-//     };
-//   } else if (detectMobile() && window.innerWidth < 768) {
-//     largeImageMobile.onload = function () {
-//       document.body.style.backgroundImage = `url('./img/agents_imgs/agents-1.png')`;
-//     };
-//   } else {
-//     largeImage.onload = function () {
-//       document.body.style.backgroundImage = `url('./img/agents_imgs/agents-1.png')`;
-//     };
-//   }
-// }
+  // Check screen size on resize
+  window.addEventListener("resize", checkScreenSize);
+
+  // Initial check
+  checkScreenSize();
+}
+
+// Check screen size function
+function checkScreenSize() {
+  const mobileRestriction = document.querySelector(".mobile-restriction");
+  if (window.innerWidth < 1050) {
+    mobileRestriction.style.display = "flex";
+  } else {
+    mobileRestriction.style.display = "none";
+  }
+}
 
 window.onload = function () {
-  // setBg();
+  createMobileRestriction();
   init_hnwi_region();
   init_hnwi_country();
   init_hnwi_deciles();
@@ -45,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const details = header.nextElementSibling;
     if (details && details.tagName.toLowerCase() === "details") {
-      const nextHeader = details.nextElementSibling;
+      let nextHeader = details.nextElementSibling;
 
       // Find the next header element
       while (nextHeader && !headers.includes("#" + nextHeader.id)) {

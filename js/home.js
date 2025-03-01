@@ -14,11 +14,6 @@ overlay.innerHTML += `<img class="logo-img" src="./img/ubs-logo-inv.png"></img><
 <li class="item"><a href="wealth-distribution.html">Wealth Distribution</a></li>
 <li class="item"><a href="private-wealth.html">Private Wealth</a></li>
 <li class="item"><a href="about.html">About</a></li>
-<li class="toggle">
-    <div class="bar-1"></div>
-    <div class="bar-2"></div>
-    <div class="bar-3"></div> 
-</li>
 </ul>
 <hr>
 <h2>Global Wealth</h2>
@@ -79,9 +74,33 @@ overlay.innerHTML += `<img class="logo-img" src="./img/ubs-logo-inv.png"></img><
   3
 )} USD Bn</div></details>
 <hr><footer id="copyright">
-© Jouni Rantanen ${year}
+© jouniverse ${year}
 </footer>`;
 parent.appendChild(overlay);
+
+// Create mobile restriction overlay
+const mobileRestriction = document.createElement("div");
+mobileRestriction.classList.add("mobile-restriction");
+mobileRestriction.innerHTML = `
+    <h1>Desktop Only</h1>
+    <p>This application is optimized for desktop viewing only. Please access this site on a device with a screen width of at least 1050px for the best experience.</p>
+`;
+document.body.appendChild(mobileRestriction);
+
+// Check screen size on resize
+window.addEventListener("resize", checkScreenSize);
+
+// Initial check
+function checkScreenSize() {
+  if (window.innerWidth < 1050) {
+    mobileRestriction.style.display = "flex";
+  } else {
+    mobileRestriction.style.display = "none";
+  }
+}
+
+// Run initial check
+checkScreenSize();
 
 Chart.defaults.color = colorsHEX.platinum;
 
@@ -236,14 +255,3 @@ const totalWealthChart = new Chart("totalWealthChart", {
     },
   },
 });
-
-if (detectMobile()) {
-  Chart.defaults.font.size = 8;
-  netWealthChart.options.aspectRatio = 1;
-  netWealthChart.data.datasets[0].borderRadius = 16;
-  netWealthChart.options.plugins.tooltip.titleFont.size = 16;
-  netWealthChart.options.plugins.tooltip.bodyFont.size = 14;
-  totalWealthChart.options.aspectRatio = 1.5 / 1;
-  totalWealthChart.options.plugins.tooltip.titleFont.size = 16;
-  totalWealthChart.options.plugins.tooltip.bodyFont.size = 14;
-}

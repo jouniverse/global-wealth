@@ -1,0 +1,146 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background: #21252b;
+
+  color: #d3ddef;
+}
+
+.world-map {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  position: relative;
+  visibility: visible;
+
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1rem;
+  opacity: 1;
+  transition: opacity 0.5s;
+
+  z-index: 1;
+  margin-top: -90px;
+}
+.world-map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  margin-left: 1rem;
+  pointer-events: all !important;
+}
+.world-map-svg path {
+  fill: #383d46;
+  fill-opacity: 1;
+  stroke: #21252b;
+  stroke-opacity: 1;
+  stroke-width: 0.5;
+  transition: 0.5s;
+  cursor: pointer !important;
+  pointer-events: all !important;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  background: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 30px;
+  z-index: 1000;
+  animation: back-button-animation 8s infinite alternate;
+  transition: 0.3s ease-in-out;
+}
+
+@keyframes back-button-animation {
+  0% {
+    background-color: transparent;
+    color: var(--seasalt);
+    border: 1px solid var(--seasalt);
+  }
+  100% {
+    background-color: var(--seasalt);
+    color: var(--eerie-black);
+    border: 1px solid var(--eerie-black);
+  }
+}
+
+.back-button:hover {
+  background-image: none;
+  background-color: var(--seasalt) !important;
+  color: var(--onyx) !important;
+  outline: 3px solid var(--seasalt);
+  box-shadow: none;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: none;
+  pointer-events: none;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+/* Mobile restriction overlay */
+.mobile-restriction {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 9999;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.mobile-restriction h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.mobile-restriction p {
+  font-size: 16px;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 1050px) {
+  .mobile-restriction {
+    display: flex;
+  }
+
+  body > *:not(.mobile-restriction) {
+    display: none;
+  }
+}

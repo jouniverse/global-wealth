@@ -14,11 +14,6 @@ overlay.innerHTML += `<img class="logo-img" src="./img/ubs-logo-inv.png"></img><
 <li class="item"><a href="wealth-distribution.html">Wealth Distribution</a></li>
 <li class="item"><a href="private-wealth.html">Private Wealth</a></li>
 <li class="item active"><a href="#">About</a></li>
-<li class="toggle">
-    <div class="bar-1"></div>
-    <div class="bar-2"></div>
-    <div class="bar-3"></div> 
-</li>
 </ul>
 <hr>
 <h2>About</h2>
@@ -34,9 +29,33 @@ overlay.innerHTML += `<img class="logo-img" src="./img/ubs-logo-inv.png"></img><
 <sup id="ref-2">2<a class="ref-link" href="https://tabula.technology/"> Tabula</a></sup>
 <sup>3<a class="ref-link" href="https://github.com/tabulapdf/tabula"> Tabula GitHub</a></sup>
 <hr><footer id="copyright">
-© Jouni Rantanen ${year}
+© jouniverse ${year}
 </footer>`;
 parent.appendChild(overlay);
+
+// Create mobile restriction overlay
+const mobileRestriction = document.createElement("div");
+mobileRestriction.classList.add("mobile-restriction");
+mobileRestriction.innerHTML = `
+    <h1>Desktop Only</h1>
+    <p>This application is optimized for desktop viewing only. Please access this site on a device with a screen width of at least 1050px for the best experience.</p>
+`;
+document.body.appendChild(mobileRestriction);
+
+// Check screen size on resize
+window.addEventListener("resize", checkScreenSize);
+
+// Initial check
+function checkScreenSize() {
+  if (window.innerWidth < 1050) {
+    mobileRestriction.style.display = "flex";
+  } else {
+    mobileRestriction.style.display = "none";
+  }
+}
+
+// Run initial check
+checkScreenSize();
 
 let wealthBins = Array.from({ length: 28 }, (_, i) => 5000 + i * 5000);
 let totalWealthHistogramData = countFrequencyWithFixedBinWidth(
@@ -132,12 +151,3 @@ let totalWealthHistogram = new Chart("histogram", {
 });
 
 totalWealthHistogram.options.plugins.title.font.size = 9;
-
-if (detectMobile()) {
-  Chart.defaults.font.size = 8;
-  totalWealthHistogram.options.plugins.tooltip.titleFont.size = 14;
-  totalWealthHistogram.options.plugins.tooltip.bodyFont.size = 16;
-  totalWealthHistogram.options.aspectRatio = 1;
-  totalWealthHistogram.data.datasets[0].borderRadius = 12;
-  totalWealthHistogram.data.datasets[0].borderWidth = 0;
-}

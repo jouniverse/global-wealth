@@ -4,9 +4,9 @@
   width: 60vmin;
   margin-top: 30px;
   padding: 5px 10px 5px 10px;
-  border: 1px solid var(--seasalt);
   border-radius: 30px;
-  box-shadow: 5px 5px 15px var(--seasalt), -5px -5px 20px var(--platinum);
+  border-top: 2px solid var(--seasalt);
+  border-left: 2px solid var(--seasalt);
 }
 
 .slider-double .slider-legend-container {
@@ -127,10 +127,8 @@
   font-weight: 500;
   font-size: 0.7em;
   color: var(--platinum);
-  box-shadow: 5px 5px 10px var(--antiflash-white),
-    -5px -5px 10px var(--platinum);
-  text-shadow: 5px 5px 10px var(--antiflash-white),
-    -5px -5px 10px var(--seasalt);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .slider-double .slider-values-container {
@@ -138,27 +136,6 @@
   background-color: transparent;
   color: var(--seasalt);
   border-radius: 30px;
-  border: 1px solid var(--seasalt);
-}
-
-@media screen and (max-width: 768px) {
-  .slider-double .wrapper {
-    width: 90vmin;
-  }
-
-  .slider-double .slider-values {
-    width: 80%;
-  }
-
-  .slider-double .slider-track,
-  .slider-double .slider-track-wealth-estimates-by-region-double {
-    height: 85%;
-  }
-
-  .slider-double input[type="range"]::-webkit-slider-thumb {
-    height: 5em;
-    width: 1em;
-    margin-top: -30px;
-    border-radius: 4px;
-  }
+  border-top: 1px solid var(--seasalt);
+  border-left: 1px solid var(--seasalt);
 }

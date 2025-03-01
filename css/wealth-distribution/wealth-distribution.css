@@ -7,9 +7,7 @@
 }
 
 body {
-  background-image: url("../../img/agents_imgs/agents-1.png");
-  background-size: 10%;
-  background-repeat: repeat;
+  background: #21252b;
   place-items: center;
   cursor: pointer;
   transition: background 0.5s ease-in-out;
@@ -23,9 +21,6 @@ body {
 #wealth-estimates-by-country-section-chart,
 #wealth-estimates-by-single-country-section-chart {
   position: relative;
-  z-index: 0;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
   border-radius: 30px;
   border-top: 2px solid rgba(255, 255, 255, 0.4);
   border-left: 2px solid rgba(255, 255, 255, 0.4);
@@ -34,6 +29,18 @@ body {
   margin-left: 10%;
   margin-top: 40px;
   padding: 20px 10px 20px 20px;
+  transition: ease-in-out 0.4s;
+}
+
+#introduction-section summary,
+#total-wealth-chart-section summary,
+#components-of-wealth-chart-section summary,
+#market-details-chart-section summary,
+#wealth-estimates-by-region-section-chart summary,
+#wealth-estimates-by-country-section-chart summary,
+#wealth-estimates-by-single-country-section-chart summary {
+  color: var(--seasalt);
+  transition: ease-in-out 0.4s;
 }
 
 #section-0,
@@ -45,10 +52,8 @@ body {
 #section-6,
 #section-7,
 #section-8 {
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
   border-radius: 50px;
-  padding: 100px 100px 150px 100px;
+  padding: 50px 50px 50px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,12 +74,14 @@ hr {
   box-shadow: 2px 2px 20px var(--antiflash-white), -2px -2px 20px var(--onyx);
 }
 
+#sources-section {
+  margin-top: 150px;
+}
+
 #sources-info {
   color: var(--seasalt);
   margin: 6% 10% 5% 10%;
   background-image: var(--body-bg-gradient);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
   border-radius: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   border-left: 1px solid rgba(255, 255, 255, 0.4);
@@ -99,10 +106,11 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: ease-in-out 0.3s;
 }
 
 #sources-info-household-data-sources {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #sources-info-survey-data-sources {
@@ -166,9 +174,10 @@ canvas {
 #wealth-estimates-by-region-header,
 #wealth-estimates-by-country-header,
 #wealth-estimates-by-single-country-header {
-  font-family: "Lora", serif;
+  font-family: "Inter", sans-serif;
   font-size: 3rem;
   font-weight: 900;
+  line-height: 1;
   position: relative;
   z-index: 0;
   -webkit-backdrop-filter: blur(4px);
@@ -177,18 +186,19 @@ canvas {
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   border-left: 1px solid rgba(255, 255, 255, 0.4);
   color: var(--antiflash-white);
-  /* box-shadow: 3px 3px 40px var(--seasalt), -3px -3px 40px var(--platinum); */
   width: 80%;
   margin-left: 10%;
   margin-top: 40px;
   padding: 20px 10px 20px 20px;
   outline: 2px solid var(--platinum);
   outline-offset: 4px;
+  transition: ease-in-out 0.4s;
 }
 
 .intro-txt a {
   color: var(--seasalt);
   text-decoration: none;
+  transition: ease-in-out 0.3s;
 }
 
 #market-details-info,
@@ -208,6 +218,7 @@ canvas {
   width: 100%;
   margin-top: 40px;
   padding: 10px;
+  transition: ease-in-out 0.3s;
 }
 
 #intro-txt {
@@ -261,108 +272,83 @@ canvas {
   outline-offset: 4px;
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    background-image: url("../../img/agents_imgs/agents-1.png");
-    background-size: 30%;
-    background-repeat: repeat;
-    place-items: center;
-    cursor: pointer;
-    transition: background 0.5s ease-in-out;
+/* World Map Button Styles */
+.world-map-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.world-map-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: rgba(248, 249, 250, 0.2);
+  color: var(--seasalt);
+  text-decoration: none;
+  border-radius: 30px;
+  border: 2px solid rgba(248, 249, 250, 0.3);
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  outline: 2px solid rgba(248, 249, 250, 0.2);
+  outline-offset: 4px;
+}
+
+.world-map-button:hover {
+  background-color: var(--seasalt);
+  color: var(--onyx);
+  /* transform: translateY(-3px); */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.world-map-description {
+  max-width: 600px;
+  color: var(--seasalt);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Mobile restriction overlay */
+.mobile-restriction {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 9999;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.mobile-restriction h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.mobile-restriction p {
+  font-size: 16px;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 1050px) {
+  .mobile-restriction {
+    display: flex;
   }
 
-  hr {
-    visibility: none;
-  }
-
-  #introduction-section,
-  #total-wealth-chart-section,
-  #components-of-wealth-chart-section,
-  #market-details-chart-section,
-  #wealth-estimates-by-region-section-chart,
-  #wealth-estimates-by-country-section-chart,
-  #wealth-estimates-by-single-country-section-chart {
-    margin: 3%;
-    width: 95%;
-    padding-top: 20px;
-  }
-
-  #section-0,
-  #section-1,
-  #section-2,
-  #section-3,
-  #section-4,
-  #section-5,
-  #section-6,
-  #section-7,
-  #section-8 {
-    margin: 0;
-    padding: 0;
-  }
-
-  #section-2 {
-    margin-top: 110px;
-  }
-
-  #sources-section {
-    margin-top: 110px;
-  }
-
-  #intro,
-  #wealth-estimates-main-header,
-  #total-wealth-header,
-  #components-of-wealth-header,
-  #market-details-header,
-  #wealth-estimates-by-region-header,
-  #wealth-estimates-by-country-header,
-  #wealth-estimates-by-single-country-header {
-    font-size: 2rem;
-    /* line-height: 1; */
-    margin: 3%;
-    width: 95%;
-    background-image: none;
-    margin-top: 30px;
-    text-align: center;
-    border: 2px solid var(--seasalt);
-    text-shadow: none;
-  }
-
-  #market-details-info,
-  #total-wealth-info,
-  #wealth-per-adult-info,
-  #median-wealth-info,
-  #wealth-components-info,
-  #share-of-wealth-info,
-  #wealth-estimates-by-region-info,
-  #wealth-estimates-by-country-info {
-    padding-left: 20px;
-    border-radius: 30px;
-  }
-
-  #sources-info-household-data-sources {
-    margin: 3%;
-    width: 95%;
-    margin-bottom: 5px;
-    margin-top: 160px;
-  }
-
-  #sources-info-survey-data-sources {
-    margin: 3%;
-    width: 95%;
-    margin-top: 5px;
-  }
-
-  table {
-    font-size: 0.7rem;
-  }
-
-  th,
-  td {
-    padding: 3px;
-  }
-
-  footer {
-    margin-top: 100px !important;
+  body > *:not(.mobile-restriction) {
+    display: none;
   }
 }
 
@@ -374,8 +360,9 @@ canvas {
   #wealth-estimates-by-region-section-chart:hover,
   #wealth-estimates-by-country-section-chart:hover,
   #wealth-estimates-by-single-country-section-chart:hover {
-    box-shadow: 3px 3px 50px var(--seasalt), -3px -3px 50px var(--platinum);
-    transition: ease-in-out 0.4s;
+    /* box-shadow: 1px 1px 20px var(--platinum); */
+    border-top: 2px solid var(--seasalt);
+    border-left: 2px solid var(--seasalt);
   }
 
   #introduction-section summary:hover,
@@ -386,12 +373,10 @@ canvas {
   #wealth-estimates-by-country-section-chart summary:hover,
   #wealth-estimates-by-single-country-section-chart summary:hover {
     color: var(--brand-red);
-    transition: ease-in-out 0.2s;
   }
 
   .intro-txt a:hover {
     color: var(--brand-red);
-    transition: ease-in-out 0.3s;
   }
 
   #market-details-info:hover,
@@ -402,35 +387,21 @@ canvas {
   #share-of-wealth-info:hover,
   #wealth-estimates-by-region-info:hover,
   #wealth-estimates-by-country-info:hover {
-    box-shadow: 3px 3px 30px var(--seasalt), -3px -3px 30px var(--platinum);
-    transition: ease-in-out 0.3s;
-  }
-
-  #sources-info:hover {
-    background-color: var(--seasalt);
-    color: var(--onyx);
-    box-shadow: 5px 5px 40px var(--antiflash-white),
-      -5px -5px 40px var(--seasalt);
-    transition: ease-in-out 0.3s;
+    border-top: 1px solid var(--seasalt);
+    border-left: 1px solid var(--seasalt);
   }
 
   #sources-info-household-data-sources:hover,
   #sources-info-survey-data-sources:hover {
-    background-color: var(--antiflash-white);
-    color: var(--onyx);
-    text-shadow: none;
-    box-shadow: 3px 3px 30px var(--seasalt), -3px -3px 30px var(--platinum);
-    transition: ease-in-out 0.3s;
-  }
-
-  #market-details-info:hover {
-    box-shadow: 3px 3px 15px var(--seasalt), -3px -3px 15px var(--platinum);
-    transition: ease-in-out 0.3s;
+    background-color: var(--onyx);
+    color: var(--seasalt);
+    border-top: 1px solid var(--seasalt);
+    border-left: 1px solid var(--seasalt);
   }
 
   #sources-info-household-data-sources:hover a {
     text-shadow: none;
-    color: var(--onyx);
+    color: var(--seasalt);
     transition: ease-in-out 0.2s;
   }
 
