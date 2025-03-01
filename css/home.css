@@ -72,6 +72,7 @@ td {
   border-radius: 12px;
   outline: 1px solid rgb(248, 249, 250, 0.7);
   outline-offset: 4px;
+  transition: ease-in-out 0.3s;
 }
 
 .wrapper {
@@ -165,6 +166,5 @@ hr {
     background-color: var(--seasalt);
     color: var(--onyx);
     box-shadow: 5px 5px 15px var(--slate-gray), -5px -5px 15px var(--slate-gray);
-    transition: ease-in-out 0.3s;
   }
 }
