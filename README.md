@@ -14,6 +14,10 @@ The data was extracted from the Global Wealth Report by UBS using **Tabula.** <s
 ![UI 2](./img/ui-2.png)
 ![UI 3](./img/ui-3.png)
 
+## Usage
+
+Run the app with `npm run dev` and open http://localhost:5173 in your browser.
+
 ## License
 
 MIT license.
