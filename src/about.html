@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Global Wealth</title>
+    <meta name="description" content="About the Global Wealth visualization and data sources." />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <main id="main-content" class="flex-1 pt-24">
+      <section class="relative px-4 md:px-6 py-8 md:py-20">
+        <div class="max-w-5xl mx-auto">
+          <div class="glass-panel ambient-glow p-4 md:p-12">
+            <p class="label-md text-primary mb-3">About</p>
+            <h1 class="display-md text-on-surface mb-8">The Data Behind<br><span class="text-primary">Global Wealth</span></h1>
+            
+            <div class="space-y-6 text-on-surface-variant body-lg">
+              <p>
+                This application visualizes data from the <strong class="text-on-surface">UBS Global Wealth Report</strong>, providing an interactive exploration of wealth distribution across the world.
+              </p>
+              
+              <h2 class="headline-md text-on-surface pt-4">Data Source</h2>
+              <p>
+                The data covers the period from 2000 to 2022 and includes wealth estimates by region and country, high-net-worth individual statistics, components of wealth, and distribution patterns.
+              </p>
+              
+              <h2 class="headline-md text-on-surface pt-4">Methodology</h2>
+              <p>
+                Wealth is defined as the value of financial assets plus real assets (principally housing) owned by households, minus their debts. The report provides estimates for adults (persons aged 20 and over) in over 200 countries.
+              </p>
+              
+              <h2 class="headline-md text-on-surface pt-4">Coverage</h2>
+              <div id="coverage-stats" class="grid grid-cols-2 gap-4 mt-4">
+                <!-- Populated by JS -->
+              </div>
+
+              <h2 class="headline-md text-on-surface pt-6">Data Sources</h2>
+              <p class="body-md text-on-surface-variant mb-4">
+                The following sections detail the household and survey data sources used in the report. Click a section to expand.
+              </p>
+              <div id="sources-container" class="space-y-3">
+                <!-- Populated by JS with collapsible sections -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/js/pages/about.js"></script>
+  </body>
+</html>

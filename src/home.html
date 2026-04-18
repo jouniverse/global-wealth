@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home — Global Wealth</title>
+    <meta name="description" content="Global wealth overview with key statistics and regional breakdown." />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <main id="main-content" class="flex-1 pt-24">
+      <!-- Hero Section -->
+      <section class="relative px-6 py-12 md:py-20">
+        <div class="max-w-5xl mx-auto">
+          <!-- Header -->
+          <div class="text-center mb-12">
+            <p class="label-md text-primary mb-3">Overview</p>
+            <h1 class="display-md text-on-surface mb-4">Global Wealth</h1>
+            <p class="body-lg text-on-surface-variant max-w-2xl mx-auto">
+              According to UBS, global net wealth was estimated at <span class="text-primary font-semibold">$454 trillion</span> in 2022, expected to rise to around $629 trillion by 2027.
+            </p>
+          </div>
+
+          <!-- KPI Cards -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+            <div class="glass-panel p-4" id="kpi-total-wealth">
+              <p class="label-md text-on-surface-variant mb-1">Total Wealth</p>
+              <p class="headline-lg text-primary" id="kpi-total-value">—</p>
+              <p class="label-md text-on-surface-variant mt-1">USD Trn</p>
+            </div>
+            <div class="glass-panel p-4" id="kpi-per-adult">
+              <p class="label-md text-on-surface-variant mb-1">Per Adult</p>
+              <p class="headline-lg text-primary" id="kpi-adult-value">—</p>
+              <p class="label-md text-on-surface-variant mt-1">USD</p>
+            </div>
+            <div class="glass-panel p-4" id="kpi-median">
+              <p class="label-md text-on-surface-variant mb-1">Median Wealth</p>
+              <p class="headline-lg text-primary" id="kpi-median-value">—</p>
+              <p class="label-md text-on-surface-variant mt-1">USD</p>
+            </div>
+            <div class="glass-panel p-4" id="kpi-adults">
+              <p class="label-md text-on-surface-variant mb-1">Adult Population</p>
+              <p class="headline-lg text-primary" id="kpi-adults-value">—</p>
+              <p class="label-md text-on-surface-variant mt-1">Thousands</p>
+            </div>
+          </div>
+
+          <!-- Charts -->
+          <div class="grid grid-cols-1 lg:grid-cols-1 gap-6">
+            <!-- Chart: Regional Wealth -->
+            <div class="glass-panel p-3 md:p-6">
+              <div class="flex items-center justify-between mb-4">
+                <h2 class="headline-md text-on-surface">Total Wealth by Region</h2>
+                <p class="label-md text-on-surface-variant">2022, USD Bn</p>
+              </div>
+              <div id="chart-regional-wealth" class="w-full" style="height: 320px;"></div>
+            </div>
+
+            <!-- Chart: Wealth Over Time -->
+            <div class="glass-panel p-3 md:p-6">
+              <div class="flex items-center justify-between mb-4">
+                <h2 class="headline-md text-on-surface">Global Net Wealth Over Time</h2>
+                <p class="label-md text-on-surface-variant">2000–2022, USD Bn</p>
+              </div>
+              <div id="chart-wealth-timeline" class="w-full" style="height: 320px;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/js/pages/home.js"></script>
+  </body>
+</html>

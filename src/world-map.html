@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wealth Map — Global Wealth</title>
+    <meta name="description" content="Interactive wealth map showing wealth distribution by country." />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <main id="main-content" class="flex-1 pt-24 flex flex-col">
+      <h1 class="headline-md text-primary text-on-surface text-center mb-4 mt-8" style="font-size: 1.5rem;">Wealth Map</h1>
+       <!-- Controls bar -->
+        <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 justify-center mb-4 mt-4">
+          <!-- <h1 class="headline-md text-on-surface" style="font-size: 1rem;">Wealth Map</h1> -->
+          <div class="flex flex-col md:flex-row items-center gap-2">
+            <select id="metric-select" class="select-styled">
+              <option value="wealthPerAdult_2022">Wealth per Adult (2022)</option>
+              <option value="totalWealth_2022">Total Wealth (2022)</option>
+              <option value="gdpPerAdult_2022">GDP per Adult (2022)</option>
+            </select>
+            <select id="country-select" class="select-styled">
+              <option value="">Select a country…</option>
+            </select>
+          </div>
+        </div>
+      <div class="w-full px-2 md:px-4 py-2 flex flex-col gap-1 flex-1">
+        <!-- Map -->
+        <div class="relative w-full" id="map-container">
+          <div id="map" class="w-full h-full"></div>
+          <!-- Tooltip -->
+          <div id="map-tooltip" class="chart-tooltip opacity-0 transition-opacity duration-150" style="position: fixed;">
+            <p class="label-md text-primary" id="tooltip-name">—</p>
+            <p class="body-md text-on-surface" id="tooltip-value">—</p>
+            <p class="body-md text-on-surface-variant" id="tooltip-extra">—</p>
+          </div>
+        </div>
+        <!-- Legend -->
+        <div id="map-legend" class="flex justify-center mb-8"></div>
+        <!-- Country detail panel -->
+        <div id="country-panel" class="hidden glass-panel p-4 md:p-5 w-full max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="headline-md text-on-surface" id="panel-country-name">—</h3>
+            <button id="panel-close" class="text-on-surface-variant hover:text-on-surface text-lg bg-transparent border-none cursor-pointer">✕</button>
+          </div>
+          <div id="panel-body" class="flex flex-col gap-4">
+            <div id="panel-stats" class="body-md"></div>
+            <div id="panel-chart" class="w-full" style="min-height: 280px;"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/js/pages/world-map.js"></script>
+  </body>
+</html>
